@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventora - Create Event</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ====== Basic Reset ====== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body, html { font-family: 'Montserrat', sans-serif; background: #0f1720; color: #fff; scroll-behavior: smooth; }
+    a { text-decoration:none; color: inherit; }
+
+    /* ====== Navbar ====== */
+    .navbar { display:flex; justify-content:space-between; align-items:center; padding:15px 50px; background:#1a1a2e; box-shadow:0 4px 15px rgba(0,0,0,0.4); position:sticky; top:0; z-index:10; }
+    .navbar .logo { font-size:1.8rem; font-weight:700; color:#ff7a00; }
+    .navbar ul { list-style:none; display:flex; gap:25px; align-items:center; }
+    .navbar ul li a { padding:8px 12px; transition: all 0.3s ease; cursor:pointer; }
+    .navbar ul li a:hover, .navbar ul li a.btn { color:#ff7a00; transform: scale(1.05); }
+
+    /* ====== Hero ====== */
+    .page-hero { text-align:center; padding:80px 20px 40px; background: linear-gradient(135deg, #1a1a2e, #111827); }
+    .page-hero h1 { font-size:3rem; margin-bottom:15px; color:#ff7a00; animation: fadeDown 0.8s ease forwards; opacity:0; }
+    .page-hero p { font-size:1.2rem; opacity:0; animation: fadeDown 0.8s 0.2s ease forwards; }
+
+    /* ====== Event Form ====== */
+    .event-form-section { display:flex; justify-content:center; padding:60px 20px; }
+    .event-form { background:#1a1a2e; padding:40px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5); width:100%; max-width:600px; display:flex; flex-direction:column; gap:20px; opacity:0; transform: translateY(30px); }
+    .event-form input, .event-form select, .event-form textarea { padding:12px 15px; border-radius:10px; border:none; outline:none; font-size:1rem; background:#111827; color:#fff; transition: all 0.3s ease; }
+    .event-form input:focus, .event-form select:focus, .event-form textarea:focus { background:#22233a; box-shadow:0 0 10px rgba(255,122,0,0.5); }
+    .event-form label { font-weight:600; }
+    .event-form button { padding:12px; border:none; border-radius:10px; background:#ff7a00; color:#fff; font-weight:700; font-size:1rem; cursor:pointer; transition: all 0.3s ease; }
+    .event-form button:hover { transform: scale(1.05); box-shadow:0 0 15px rgba(255,122,0,0.7); }
+
+    /* ====== Footer ====== */
+    footer { text-align:center; padding:30px; background:#1a1a2e; margin-top:50px; font-size:0.9rem; color:#ccc; }
+
+    /* ====== Animations ====== */
+    @keyframes fadeDown { 0% {opacity:0; transform:translateY(-20px);} 100% {opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Eventora</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Explore Events</a></li>
+        <li><a href="create-event.html">Create Event</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="login.html" class="btn">Login</a></li>
+        <li><a href="logout.html" class="btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Create New Event</h1>
+    <p>Fill in the details below to create your event and invite attendees.</p>
+  </section>
+
+  <!-- Event Form -->
+  <section class="event-form-section">
+    <form class="event-form" id="create-event-form">
+      <label for="event-name">Event Name:</label>
+      <input type="text" id="event-name" placeholder="Enter event title" required>
+
+      <label for="event-date">Date:</label>
+      <input type="date" id="event-date" required>
+
+      <label for="event-time">Time:</label>
+      <input type="time" id="event-time" required>
+
+      <label for="event-location">Location:</label>
+      <input type="text" id="event-location" placeholder="Enter location" required>
+
+      <label for="event-category">Category:</label>
+      <select id="event-category" required>
+        <option value="">Select Category</option>
+        <option value="music">Music</option>
+        <option value="art">Art</option>
+        <option value="adventure">Adventure</option>
+        <option value="tech">Tech</option>
+      </select>
+
+      <label for="event-description">Description:</label>
+      <textarea id="event-description" placeholder="Write something about your event..." required></textarea>
+
+      <label for="event-image">Event Image:</label>
+      <input type="file" id="event-image" accept="image/*">
+
+      <button type="submit" class="btn btn-primary">Create Event</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eventora. All rights reserved.</p>
+  </footer>
+
+  <!-- JS Animations -->
+  <script>
+    // Fade-in Event Form on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.event-form');
+      setTimeout(() => {
+        form.style.opacity = '1';
+        form.style.transform = 'translateY(0)';
+        form.style.transition = 'all 0.8s ease';
+      }, 300);
+    });
+
+    // Simple submit animation
+    const form = document.getElementById('create-event-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.innerText = 'Creating...';
+      btn.disabled = true;
+      btn.style.background = '#ffaa33';
+      setTimeout(() => {
+        btn.innerText = 'Create Event';
+        btn.disabled = false;
+        btn.style.background = '#ff7a00';
+        alert('Event created successfully! 🚀');
+        form.reset();
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>

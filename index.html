@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventora - Your World, Your Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="js/floating-shapes.js"></script>
+</head>
+<body>
+
+
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Eventora</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Explore Events</a></li>
+        <li><a href="create-event.html">Create Event</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="login.html" class="btn">Login</a></li>
+        <li><a href="logout.html" class="btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h1 class="hero-title">Your World. Your Events.</h1>
+    <p class="hero-subtitle">Discover, create, and join activities that match your vibe. Connect with friends and explore your city!</p>
+    <div class="hero-buttons">
+      <a href="events.html" class="btn btn-primary">Explore Events</a>
+      <a href="create-event.html" class="btn btn-secondary">Create Event</a>
+    </div>
+  </div>
+
+  <!-- Glowing blobs -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</section>
+<!-- Featured Events Section -->
+<section class="featured-events">
+  <h2>Featured Events</h2>
+  <div class="events-grid">
+    <div class="event-card">
+      <img src="images/event1.jpg" alt="Music Festival">
+      <div class="event-overlay">
+        <h3>Music Festival</h3>
+        <p>June 15, 2025</p>
+        <p>Location: Central Park</p>
+        <a href="event.html" class="btn btn-primary">Join Event</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="images/event2.jpg" alt="Art Workshop">
+      <div class="event-overlay">
+        <h3>Art Workshop</h3>
+        <p>June 20, 2025</p>
+        <p>Location: Art Center</p>
+        <a href="event.html" class="btn btn-primary">Join Event</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="images/event3.jpeg" alt="Food Fair">
+      <div class="event-overlay">
+        <h3>Food Fair</h3>
+        <p>July 5, 2025</p>
+        <p>Location: Downtown</p>
+        <a href="event.html" class="btn btn-primary">Join Event</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <img src="images/event4.jpg" alt="Tech Meetup">
+      <div class="event-overlay">
+        <h3>Tech Meetup</h3>
+        <p>July 12, 2025</p>
+        <p>Location: Innovation Hub</p>
+        <a href="event.html" class="btn btn-primary">Join Event</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="testimonials" class="testimonials">
+  <h2>What Our Community Says</h2>
+  <div class="testimonial-carousel">
+    <div class="testimonial-card">
+      <p>"Eventora helped me meet new friends and attend amazing events in my city!"</p>
+      <span>- Alex M.</span>
+    </div>
+    <div class="testimonial-card">
+      <p>"I created my first art workshop here and it was fully booked in a day."</p>
+      <span>- Sara K.</span>
+    </div>
+    <div class="testimonial-card">
+      <p>"The dashboard is super clean and I love tracking my events and achievements."</p>
+      <span>- Liam R.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter scroll-fade">
+  <div class="newsletter-content">
+    <h2>Join the Vibe</h2>
+    <p>Get all the latest events straight to your inbox!</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Your best email" required>
+      <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+    <p class="form-message" id="newsletterMessage"></p>
+  </div>
+  <div class="floating-dots">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Eventora. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.0/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/event-actions.js"></script>
+
+</body>
+</html>

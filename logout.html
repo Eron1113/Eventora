@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logging out...</title>
+<style>
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#111;
+    color:#fff;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction:column;
+}
+.loading-bar {
+    width:200px;
+    height:10px;
+    border-radius:5px;
+    background:#333;
+    overflow:hidden;
+    margin-top:20px;
+}
+.loading-fill {
+    height:100%;
+    width:0%;
+    background:#ff7a00;
+    animation:fill 0.5s forwards;
+}
+@keyframes fill {
+    to { width:100%; }
+}
+</style>
+</head>
+<body>
+<h2>Logging out...</h2>
+<div class="loading-bar"><div class="loading-fill"></div></div>
+
+<script>
+// 1️⃣ Hiq localStorage
+localStorage.removeItem("loggedIn");
+
+// 2️⃣ Redirect tek login pas 0.6s
+setTimeout(()=>{
+    window.location.href = "login.html";
+}, 600);
+</script>
+</body>
+</html>
