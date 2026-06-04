@@ -1,0 +1,129 @@
+/* === Responsive Breakpoints === */
+
+/* --- Tablets --- */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .navbar nav ul {
+    gap: 15px;
+  }
+
+  .hero, .page-hero, .dashboard-hero {
+    padding: 80px 30px;
+  }
+
+  .stats, .dashboard-stats {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .event-card {
+    min-width: 200px;
+  }
+
+  .event-form, .login-form, .register-form {
+    width: 90%;
+  }
+
+  .events-grid {
+    justify-content: center;
+  }
+}
+
+/* --- Mobile Phones --- */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero, .page-hero, .dashboard-hero {
+    padding: 60px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .events-grid {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .event-card img {
+    height: 180px;
+  }
+
+  .stats, .dashboard-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .participant-list, .badge-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p {
+    font-size: 1rem;
+  }
+}
+
+/* --- Small Phones --- */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .hero, .page-hero, .dashboard-hero {
+    padding: 40px 15px;
+  }
+
+  .event-card img {
+    height: 150px;
+  }
+
+  .event-card h3 {
+    font-size: 1rem;
+  }
+
+  .event-card p {
+    font-size: 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .event-form input, 
+  .event-form select, 
+  .event-form textarea {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}

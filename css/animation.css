@@ -1,0 +1,107 @@
+/* === Global Transitions === */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Hero / Page Hero Animations === */
+.hero h1, .page-hero h1, .dashboard-hero h1 {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+.hero p, .page-hero p, .dashboard-hero p {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Buttons === */
+.btn {
+  transform: translateY(0);
+  animation: buttonPop 0.5s forwards;
+}
+
+.btn:hover {
+  animation: buttonHover 0.3s forwards;
+}
+
+@keyframes buttonPop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes buttonHover {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255,122,0,0); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255,122,0,0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,122,0,0); }
+}
+
+/* === Event Cards Animations === */
+.event-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: cardFadeIn 0.8s forwards;
+}
+
+.event-card:nth-child(1) { animation-delay: 0.2s; }
+.event-card:nth-child(2) { animation-delay: 0.4s; }
+.event-card:nth-child(3) { animation-delay: 0.6s; }
+.event-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Participants / Badges === */
+.participant-card, .badge-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.participant-card:nth-child(1), .badge-card:nth-child(1) { animation-delay: 0.2s; }
+.participant-card:nth-child(2), .badge-card:nth-child(2) { animation-delay: 0.4s; }
+.participant-card:nth-child(3), .badge-card:nth-child(3) { animation-delay: 0.6s; }
+.participant-card:nth-child(4), .badge-card:nth-child(4) { animation-delay: 0.8s; }
+
+/* === Forms === */
+input, select, textarea {
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255,122,0,0.5);
+}
+
+/* === Footer Animation === */
+footer {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* === Scroll Animations Placeholder (for GSAP) === */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+.scroll-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
